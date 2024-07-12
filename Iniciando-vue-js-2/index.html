@@ -12,7 +12,8 @@
             <h3>
                 Campeonato Brasileiro - Série A - 2018
             </h3>
-            <input type="text" :value="gols" :id="gols+`id`"> {{ gols }}
+            <input type="text" :value="gols" :id="gols+`id`" @input="pegarValor($event)"> {{ gols }}
+            <button class="btn btn-primary" @click="showAlert">Fim do Jogo</button>
         </div>
     </div>
     <!-- development version, includes helpful console warnings -->
@@ -22,7 +23,15 @@
             el: "#app",
             data: {
                 gols: `5`
-            }
+            },
+            methods: {
+                showAlert(){
+                    alert('fim de Jogo')
+                },
+                pegarValor($event){
+                    console.log($event)
+                }
+            },
         })
     </script>
 </body>
